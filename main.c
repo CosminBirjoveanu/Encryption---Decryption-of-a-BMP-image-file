@@ -1,5 +1,5 @@
 #include "Encrypt&Decrypt.h"
-#include "ChiTest.h"
+#include "ChiSquaredTest.h"
 
 int main()
 {
@@ -29,16 +29,16 @@ int main()
 
     printf("\n");
     original_image = loadImage(original_image_path);
-    chi_r = chiTest(&original_image, 'r');
-    chi_g = chiTest(&original_image, 'g');
-    chi_b = chiTest(&original_image, 'b');
+    chi_r = chiSquaredTest(&original_image, 'r');
+    chi_g = chiSquaredTest(&original_image, 'g');
+    chi_b = chiSquaredTest(&original_image, 'b');
     printf("The results of the chi test for the original image are:\n%.2lf %.2lf %.2lf\n\n", chi_r, chi_g, chi_b);
 
     printf("\n");
     encrypted_image = loadImage(encrypted_image_destination_path);
-    chi_r = chiTest(&encrypted_image, 'r');
-    chi_g = chiTest(&encrypted_image, 'g');
-    chi_b = chiTest(&encrypted_image, 'b');
+    chi_r = chiSquaredTest(&encrypted_image, 'r');
+    chi_g = chiSquaredTest(&encrypted_image, 'g');
+    chi_b = chiSquaredTest(&encrypted_image, 'b');
     printf("The results of the chi test for the encrypted image are:\n%.2lf %.2lf %.2lf\n\n", chi_r, chi_g, chi_b);
 
     free(secret_key);

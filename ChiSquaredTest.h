@@ -1,7 +1,7 @@
-#ifndef CHI_TEST_H
-#define CHI_TEST_H
+#ifndef CHI_SQUARED_TEST_H
+#define CHI_SQUARED_TEST_H
 
-double chiTest(liniarized_image* image, unsigned char color_channel)
+double chiSquaredTest(liniarized_image* image, unsigned char color_channel)
 {
     int i, j;
     double chi = 0, frequence_of_value_i, mean_frequence; // astea
@@ -30,4 +30,4 @@ double chiTest(liniarized_image* image, unsigned char color_channel)
     return chi;
 }
 
-#endif // CHI_TEST_H
+#endif // CHI_SQUARED_TEST_H
